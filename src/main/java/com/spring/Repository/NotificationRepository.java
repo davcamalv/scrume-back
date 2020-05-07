@@ -1,14 +1,14 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.Notification;
-import com.spring.Model.Sprint;
-import com.spring.Model.Team;
-import com.spring.Model.User;
+import com.spring.model.Notification;
+import com.spring.model.Sprint;
+import com.spring.model.Team;
+import com.spring.model.User;
 
 @Repository
 public interface NotificationRepository extends AbstractRepository<Notification> {

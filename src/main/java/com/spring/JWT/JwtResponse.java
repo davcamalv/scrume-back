@@ -1,4 +1,4 @@
-package com.spring.JWT;
+package com.spring.jwt;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

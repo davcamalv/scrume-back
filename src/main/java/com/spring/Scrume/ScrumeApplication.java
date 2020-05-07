@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

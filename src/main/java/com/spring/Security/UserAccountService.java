@@ -1,4 +1,4 @@
-package com.spring.Security;
+package com.spring.security;
 
 import java.time.LocalDateTime;
 
@@ -16,14 +16,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.PaymentEditDto;
-import com.spring.CustomObject.UserAccountDto;
-import com.spring.CustomObject.UserDto;
-import com.spring.CustomObject.UsernameDto;
-import com.spring.Model.UserAccount;
-import com.spring.Service.PaymentService;
-import com.spring.Service.UserService;
-import com.spring.Utiles.Utiles;
+import com.spring.dto.PaymentEditDto;
+import com.spring.dto.UserAccountDto;
+import com.spring.dto.UserDto;
+import com.spring.dto.UsernameDto;
+import com.spring.model.UserAccount;
+import com.spring.service.PaymentService;
+import com.spring.service.UserService;
+import com.spring.utiles.Utiles;
 
 @Service
 @Transactional

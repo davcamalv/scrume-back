@@ -1,8 +1,7 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -14,11 +13,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.ProjectDto;
-import com.spring.Model.Project;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Repository.ProjectRepository;
+import com.spring.dto.ProjectDto;
+import com.spring.model.Project;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.repository.ProjectRepository;
 
 @Service
 @Transactional

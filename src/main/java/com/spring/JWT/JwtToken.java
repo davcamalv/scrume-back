@@ -1,4 +1,4 @@
-package com.spring.JWT;
+package com.spring.jwt;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.spring.CustomObject.UserLoginDto;
-import com.spring.Model.Payment;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Service.PaymentService;
+import com.spring.dto.UserLoginDto;
+import com.spring.model.Payment;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.service.PaymentService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

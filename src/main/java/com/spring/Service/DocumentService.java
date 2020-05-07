@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -40,16 +40,16 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.spring.CustomObject.DocumentDto;
-import com.spring.Model.Document;
-import com.spring.Model.DocumentType;
-import com.spring.Model.Project;
-import com.spring.Model.Sprint;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Repository.DocumentRepository;
-import com.spring.Security.UserAccountService;
+import com.spring.dto.DocumentDto;
+import com.spring.model.Document;
+import com.spring.model.DocumentType;
+import com.spring.model.Project;
+import com.spring.model.Sprint;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.repository.DocumentRepository;
+import com.spring.security.UserAccountService;
 
 @Service
 @Transactional

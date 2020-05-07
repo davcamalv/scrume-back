@@ -1,4 +1,4 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.util.Collection;
 import java.util.List;
@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.HistoryTask;
-import com.spring.Model.Sprint;
-import com.spring.Model.Team;
-import com.spring.Model.Workspace;
+import com.spring.model.HistoryTask;
+import com.spring.model.Sprint;
+import com.spring.model.Team;
+import com.spring.model.Workspace;
 
 @Repository
 public interface WorkspaceRepository extends AbstractRepository<Workspace> {

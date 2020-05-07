@@ -1,4 +1,4 @@
-package com.spring.Utiles;
+package com.spring.utiles;
 
 import java.io.BufferedReader;
 import java.io.IOException;

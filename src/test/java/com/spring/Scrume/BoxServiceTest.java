@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.stream.Stream;
 
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.Service.BoxService;
+import com.spring.service.BoxService;
 
 public class BoxServiceTest extends AbstractTest {
 

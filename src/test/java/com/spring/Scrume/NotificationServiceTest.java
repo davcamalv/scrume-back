@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.NotificationSaveDto;
-import com.spring.CustomObject.NotificationUpdateDto;
-import com.spring.Service.NotificationService;
+import com.spring.dto.NotificationSaveDto;
+import com.spring.dto.NotificationUpdateDto;
+import com.spring.service.NotificationService;
 
 public class NotificationServiceTest extends AbstractTest {
 

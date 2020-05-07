@@ -1,4 +1,4 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.util.Collection;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.Payment;
-import com.spring.Model.UserAccount;
+import com.spring.model.Payment;
+import com.spring.model.UserAccount;
 
 @Repository
 public interface PaymentRepository extends AbstractRepository<Payment> {

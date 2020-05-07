@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.lang.reflect.Type;
 import java.math.BigInteger;
@@ -19,22 +19,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.AllDataDto;
-import com.spring.CustomObject.FindByNickDto;
-import com.spring.CustomObject.TaskToAllDataDto;
-import com.spring.CustomObject.UserDto;
-import com.spring.CustomObject.UserOfATeamByWorspaceDto;
-import com.spring.CustomObject.UserUpdateDto;
-import com.spring.CustomObject.UserWithNickDto;
-import com.spring.Model.Task;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Model.Workspace;
-import com.spring.Repository.UserRepository;
-import com.spring.Security.Role;
-import com.spring.Security.UserAccountService;
-import com.spring.Utiles.Utiles;
+import com.spring.dto.AllDataDto;
+import com.spring.dto.FindByNickDto;
+import com.spring.dto.TaskToAllDataDto;
+import com.spring.dto.UserDto;
+import com.spring.dto.UserOfATeamByWorspaceDto;
+import com.spring.dto.UserUpdateDto;
+import com.spring.dto.UserWithNickDto;
+import com.spring.model.Task;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.model.Workspace;
+import com.spring.repository.UserRepository;
+import com.spring.security.Role;
+import com.spring.security.UserAccountService;
+import com.spring.utiles.Utiles;
 
 @Service
 @Transactional

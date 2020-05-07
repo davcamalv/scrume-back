@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.stream.Stream;
 
@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.ProjectDto;
-import com.spring.Model.Project;
-import com.spring.Repository.ProjectRepository;
-import com.spring.Service.ProjectService;
-import com.spring.Service.TeamService;
+import com.spring.dto.ProjectDto;
+import com.spring.model.Project;
+import com.spring.repository.ProjectRepository;
+import com.spring.service.ProjectService;
+import com.spring.service.TeamService;
 
 public class ProjectServiceTest extends AbstractTest {
 	

@@ -1,4 +1,4 @@
-package com.spring.Model;
+package com.spring.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;

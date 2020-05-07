@@ -1,4 +1,4 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.Estimation;
-import com.spring.Model.Task;
-import com.spring.Model.User;
+import com.spring.model.Estimation;
+import com.spring.model.Task;
+import com.spring.model.User;
 
 @Repository
 public interface EstimationRepository extends AbstractRepository<Estimation> {

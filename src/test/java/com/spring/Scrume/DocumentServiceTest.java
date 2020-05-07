@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.stream.Stream;
 
@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.DocumentDto;
-import com.spring.Model.Document;
-import com.spring.Model.DocumentType;
-import com.spring.Model.Sprint;
-import com.spring.Repository.DocumentRepository;
-import com.spring.Service.DocumentService;
-import com.spring.Service.SprintService;
+import com.spring.dto.DocumentDto;
+import com.spring.model.Document;
+import com.spring.model.DocumentType;
+import com.spring.model.Sprint;
+import com.spring.repository.DocumentRepository;
+import com.spring.service.DocumentService;
+import com.spring.service.SprintService;
 
 public class DocumentServiceTest extends AbstractTest {
 	@Autowired

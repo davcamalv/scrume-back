@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,14 +16,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.HistoryTaskDto;
-import com.spring.Model.Column;
-import com.spring.Model.HistoryTask;
-import com.spring.Model.Project;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
-import com.spring.Model.Workspace;
-import com.spring.Repository.HistoryTaskRepository;
+import com.spring.dto.HistoryTaskDto;
+import com.spring.model.Column;
+import com.spring.model.HistoryTask;
+import com.spring.model.Project;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
+import com.spring.model.Workspace;
+import com.spring.repository.HistoryTaskRepository;
 
 @Service
 @Transactional

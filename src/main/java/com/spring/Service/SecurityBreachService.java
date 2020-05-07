@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import javax.transaction.Transactional;
 
@@ -7,11 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.SecurityBreachDto;
-import com.spring.Model.SecurityBreach;
-import com.spring.Model.User;
-import com.spring.Repository.SecurityBreachRepository;
-import com.spring.Security.Role;
+import com.spring.dto.SecurityBreachDto;
+import com.spring.model.SecurityBreach;
+import com.spring.model.User;
+import com.spring.repository.SecurityBreachRepository;
+import com.spring.security.Role;
 
 @Service
 @Transactional

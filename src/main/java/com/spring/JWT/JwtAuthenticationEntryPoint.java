@@ -1,4 +1,4 @@
-package com.spring.JWT;
+package com.spring.jwt;
 
 import java.io.IOException;
 
