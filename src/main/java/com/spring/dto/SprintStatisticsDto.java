@@ -2,7 +2,7 @@ package com.spring.dto;
 
 import java.util.Date;
 
-import com.spring.modelS.Project;
+import com.spring.model.Project;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

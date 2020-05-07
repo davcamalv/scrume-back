@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.SecurityBreachDto;
-import com.spring.modelS.SecurityBreach;
-import com.spring.serviceS.SecurityBreachService;
+import com.spring.model.SecurityBreach;
+import com.spring.service.SecurityBreachService;
 
 @RestController
 @RequestMapping("/api/administrator")

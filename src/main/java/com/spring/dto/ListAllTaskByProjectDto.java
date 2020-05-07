@@ -2,7 +2,7 @@ package com.spring.dto;
 
 import java.util.List;
 
-import com.spring.modelS.Team;
+import com.spring.model.Team;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.NoteDto;
 import com.spring.dto.NoteIdDto;
-import com.spring.serviceS.NoteService;
+import com.spring.service.NoteService;
 
 @RestController
 @RequestMapping("/api/note")

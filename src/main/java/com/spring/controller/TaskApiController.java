@@ -17,8 +17,8 @@ import com.spring.dto.ListAllTaskByProjectDto;
 import com.spring.dto.TaskDto;
 import com.spring.dto.TaskEditDto;
 import com.spring.dto.UserProjectWorkspaceFromTaskDto;
-import com.spring.serviceS.EstimationService;
-import com.spring.serviceS.TaskService;
+import com.spring.service.EstimationService;
+import com.spring.service.TaskService;
 
 @RestController
 @RequestMapping("api/task")

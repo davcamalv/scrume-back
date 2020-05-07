@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.PaymentEditDto;
 import com.spring.dto.PaymentListDto;
-import com.spring.jwtS.JwtResponse;
-import com.spring.serviceS.PaymentService;
+import com.spring.jwt.JwtResponse;
+import com.spring.service.PaymentService;
 
 @RestController
 @RequestMapping("/api/payment")

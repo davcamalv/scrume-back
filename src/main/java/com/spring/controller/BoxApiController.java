@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.modelS.Box;
-import com.spring.serviceS.BoxService;
+import com.spring.model.Box;
+import com.spring.service.BoxService;
 
 @RestController
 @RequestMapping("/api/box")
