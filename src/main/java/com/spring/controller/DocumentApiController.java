@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.DocumentDto;
-import com.spring.serviceS.DocumentService;
+import com.spring.service.DocumentService;
 
 @RestController
 @RequestMapping("/api/document/")

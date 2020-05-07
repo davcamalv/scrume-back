@@ -22,10 +22,10 @@ import com.spring.dto.MyTeamDto;
 import com.spring.dto.TeamDto;
 import com.spring.dto.UserWithNickDto;
 import com.spring.dto.UserWithUserRolDto;
-import com.spring.serviceS.InvitationService;
-import com.spring.serviceS.TeamService;
-import com.spring.serviceS.UserRolService;
-import com.spring.serviceS.UserService;
+import com.spring.service.InvitationService;
+import com.spring.service.TeamService;
+import com.spring.service.UserRolService;
+import com.spring.service.UserService;
 
 @RestController
 @RequestMapping("/api/team")

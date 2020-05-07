@@ -15,9 +15,9 @@ import com.spring.dto.AllDataDto;
 import com.spring.dto.UserDto;
 import com.spring.dto.UserOfATeamByWorspaceDto;
 import com.spring.dto.UserUpdateDto;
-import com.spring.modelS.SecurityBreach;
-import com.spring.serviceS.SecurityBreachService;
-import com.spring.serviceS.UserService;
+import com.spring.model.SecurityBreach;
+import com.spring.service.SecurityBreachService;
+import com.spring.service.UserService;
 
 @RestController
 @RequestMapping("/api/user")

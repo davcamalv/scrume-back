@@ -3,9 +3,9 @@ package com.spring.dto;
 import java.util.Collection;
 import java.util.Map;
 
-import com.spring.modelS.Column;
-import com.spring.modelS.Task;
-import com.spring.modelS.Workspace;
+import com.spring.model.Column;
+import com.spring.model.Task;
+import com.spring.model.Workspace;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

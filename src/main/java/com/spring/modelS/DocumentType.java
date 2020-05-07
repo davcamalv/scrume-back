@@ -1,4 +1,0 @@
-package com.spring.modelS;
-
-public enum DocumentType {
-	PLANNING_MEETING,MIDDLE_REVIEW, REVIEW,MIDDLE_RETROSPECTIVE,RETROSPECTIVE,DAILY}
