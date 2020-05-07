@@ -16,8 +16,8 @@ import com.spring.dto.BurndownDto;
 import com.spring.dto.SprintDto;
 import com.spring.dto.SprintEditDto;
 import com.spring.dto.SprintStatisticsDto;
-import com.spring.model.Project;
-import com.spring.service.SprintService;
+import com.spring.modelS.Project;
+import com.spring.serviceS.SprintService;
 
 @RestController
 @RequestMapping("/api/sprint")

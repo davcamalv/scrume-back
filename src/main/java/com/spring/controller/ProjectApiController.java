@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.ProjectDto;
-import com.spring.service.ProjectService;
+import com.spring.serviceS.ProjectService;
 
 @RestController
 @RequestMapping("/api/project")

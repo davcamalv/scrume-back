@@ -1,7 +1,7 @@
 package com.spring.dto;
 
-import com.spring.model.Team;
-import com.spring.model.User;
+import com.spring.modelS.Team;
+import com.spring.modelS.User;
 
 import lombok.Data;
 
