@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.HashSet;
 import java.util.List;
@@ -9,14 +9,14 @@ import org.modelmapper.internal.util.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.TaskDto;
-import com.spring.CustomObject.TaskEditDto;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
-import com.spring.Model.Workspace;
-import com.spring.Service.SprintService;
-import com.spring.Service.TaskService;
-import com.spring.Service.WorkspaceService;
+import com.spring.dto.TaskDto;
+import com.spring.dto.TaskEditDto;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
+import com.spring.model.Workspace;
+import com.spring.service.SprintService;
+import com.spring.service.TaskService;
+import com.spring.service.WorkspaceService;
 
 public class TaskServiceTest extends AbstractTest {
 

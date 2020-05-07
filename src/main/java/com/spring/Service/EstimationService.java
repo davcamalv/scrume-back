@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import javax.transaction.Transactional;
 
@@ -7,12 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.EstimationDto;
-import com.spring.Model.Estimation;
-import com.spring.Model.Task;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Repository.EstimationRepository;
+import com.spring.dto.EstimationDto;
+import com.spring.model.Estimation;
+import com.spring.model.Task;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.repository.EstimationRepository;
 
 @Service
 @Transactional

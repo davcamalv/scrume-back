@@ -1,4 +1,4 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.util.Collection;
 import java.util.Date;
@@ -7,9 +7,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.Project;
-import com.spring.Model.Sprint;
-import com.spring.Model.Team;
+import com.spring.model.Project;
+import com.spring.model.Sprint;
+import com.spring.model.Team;
 
 @Repository
 public interface SprintRepository extends AbstractRepository<Sprint> {

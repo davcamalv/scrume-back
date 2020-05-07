@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -18,17 +18,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.BurnUpDto;
-import com.spring.CustomObject.BurndownDto;
-import com.spring.CustomObject.SprintDto;
-import com.spring.CustomObject.SprintEditDto;
-import com.spring.CustomObject.SprintStatisticsDto;
-import com.spring.Model.Project;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Repository.SprintRepository;
+import com.spring.dto.BurnUpDto;
+import com.spring.dto.BurndownDto;
+import com.spring.dto.SprintDto;
+import com.spring.dto.SprintEditDto;
+import com.spring.dto.SprintStatisticsDto;
+import com.spring.model.Project;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.repository.SprintRepository;
 
 @Service
 @Transactional

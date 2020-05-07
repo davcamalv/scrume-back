@@ -1,13 +1,13 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.Document;
-import com.spring.Model.DocumentType;
-import com.spring.Model.Sprint;
+import com.spring.model.Document;
+import com.spring.model.DocumentType;
+import com.spring.model.Sprint;
 
 @Repository
 public interface DocumentRepository extends AbstractRepository<Document> {

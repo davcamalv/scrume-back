@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.InvitationRecipientDto;
-import com.spring.CustomObject.InvitationSenderDto;
-import com.spring.Service.InvitationService;
+import com.spring.dto.InvitationRecipientDto;
+import com.spring.dto.InvitationSenderDto;
+import com.spring.service.InvitationService;
 
 public class InvitationServiceTest extends AbstractTest {
 

@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.time.LocalDate;
 import java.util.stream.Stream;
@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.UserAccountDto;
-import com.spring.Model.UserAccount;
-import com.spring.Security.UserAccountService;
+import com.spring.dto.UserAccountDto;
+import com.spring.model.UserAccount;
+import com.spring.security.UserAccountService;
 
 public class UserAccountServiceTest extends AbstractTest {
 

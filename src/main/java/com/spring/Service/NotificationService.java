@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
@@ -19,17 +19,17 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.NotificationDto;
-import com.spring.CustomObject.NotificationListDto;
-import com.spring.CustomObject.NotificationSaveDto;
-import com.spring.CustomObject.NotificationUpdateDto;
-import com.spring.CustomObject.ProjectIdNameDto;
-import com.spring.CustomObject.TeamDto;
-import com.spring.Model.Notification;
-import com.spring.Model.Sprint;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Repository.NotificationRepository;
+import com.spring.dto.NotificationDto;
+import com.spring.dto.NotificationListDto;
+import com.spring.dto.NotificationSaveDto;
+import com.spring.dto.NotificationUpdateDto;
+import com.spring.dto.ProjectIdNameDto;
+import com.spring.dto.TeamDto;
+import com.spring.model.Notification;
+import com.spring.model.Sprint;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.repository.NotificationRepository;
 
 @Service
 @Transactional

@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.NoteDto;
-import com.spring.CustomObject.NoteIdDto;
-import com.spring.Model.Note;
-import com.spring.Model.User;
-import com.spring.Repository.NoteRepository;
+import com.spring.dto.NoteDto;
+import com.spring.dto.NoteIdDto;
+import com.spring.model.Note;
+import com.spring.model.User;
+import com.spring.repository.NoteRepository;
 
 @Service
 @Transactional

@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.stream.Stream;
 
@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.TeamDto;
-import com.spring.Service.TeamService;
+import com.spring.dto.TeamDto;
+import com.spring.service.TeamService;
 
 public class TeamServiceTest extends AbstractTest {
 

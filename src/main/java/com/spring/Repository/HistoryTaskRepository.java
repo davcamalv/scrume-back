@@ -1,4 +1,4 @@
-package com.spring.Repository;
+package com.spring.repository;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -7,10 +7,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.Column;
-import com.spring.Model.HistoryTask;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
+import com.spring.model.Column;
+import com.spring.model.HistoryTask;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
 
 @Repository
 public interface HistoryTaskRepository extends AbstractRepository<HistoryTask> {

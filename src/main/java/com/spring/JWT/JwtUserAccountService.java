@@ -1,4 +1,4 @@
-package com.spring.JWT;
+package com.spring.jwt;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +14,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.UserLoginDto;
-import com.spring.Model.Payment;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Service.PaymentService;
-import com.spring.Utiles.Utiles;
+import com.spring.dto.UserLoginDto;
+import com.spring.model.Payment;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.service.PaymentService;
+import com.spring.utiles.Utiles;
 
 @Service
 @Transactional

@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.stream.Stream;
 
@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.EstimationDto;
-import com.spring.Service.EstimationService;
+import com.spring.dto.EstimationDto;
+import com.spring.service.EstimationService;
 
 public class EstimationServiceTest extends AbstractTest {
 

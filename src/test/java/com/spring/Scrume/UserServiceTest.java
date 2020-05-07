@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,15 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.FindByNickDto;
-import com.spring.CustomObject.UserDto;
-import com.spring.CustomObject.UserUpdateDto;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Security.Role;
-import com.spring.Security.UserAccountRepository;
-import com.spring.Service.UserService;
-import com.spring.Utiles.Utiles;
+import com.spring.dto.FindByNickDto;
+import com.spring.dto.UserDto;
+import com.spring.dto.UserUpdateDto;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.security.Role;
+import com.spring.security.UserAccountRepository;
+import com.spring.service.UserService;
+import com.spring.utiles.Utiles;
 
 public class UserServiceTest extends AbstractTest {
 

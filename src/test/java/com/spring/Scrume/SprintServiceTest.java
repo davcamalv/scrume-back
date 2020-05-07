@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.SprintDto;
-import com.spring.CustomObject.SprintEditDto;
-import com.spring.Model.Project;
-import com.spring.Service.ProjectService;
-import com.spring.Service.SprintService;
+import com.spring.dto.SprintDto;
+import com.spring.dto.SprintEditDto;
+import com.spring.model.Project;
+import com.spring.service.ProjectService;
+import com.spring.service.SprintService;
 
 public class SprintServiceTest extends AbstractTest {
 

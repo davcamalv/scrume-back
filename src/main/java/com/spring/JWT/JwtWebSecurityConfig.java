@@ -1,4 +1,4 @@
-package com.spring.JWT;
+package com.spring.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -59,6 +59,8 @@ public class JwtWebSecurityConfig extends WebSecurityConfigurerAdapter {
 		web.ignoring().antMatchers("/api/user/find-by-authorization");
 		web.ignoring().antMatchers("/api/user/security-breach");
 		web.ignoring().antMatchers("/api/login/authenticate");
+		web.ignoring().antMatchers("/api/discount-code/isAValidCode");
+
 		
 	}
 
@@ -73,6 +75,7 @@ public class JwtWebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authenticated().antMatchers("/api/task/**").authenticated().antMatchers("/api/payment/**")
 				.authenticated().antMatchers("/api/box/**").authenticated().antMatchers("/api/user/**").authenticated().antMatchers("/api/notification/**").authenticated()
 				.antMatchers("/api/administrator/**").hasRole("ADMIN")
+				.antMatchers("/api/discount-code/**").hasRole("ADMIN")
 				.antMatchers("/api/document/**").authenticated().antMatchers("/api/note/**").authenticated();
 
 		// Probar si al cierre de sesion, sigue disponible la API

@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,13 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.ChangeRolDto;
-import com.spring.CustomObject.MyTeamDto;
-import com.spring.CustomObject.UserWithUserRolDto;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Model.UserRol;
-import com.spring.Repository.UserRolRepository;
+import com.spring.dto.ChangeRolDto;
+import com.spring.dto.MyTeamDto;
+import com.spring.dto.UserWithUserRolDto;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.model.UserRol;
+import com.spring.repository.UserRolRepository;
 
 @Service
 @Transactional

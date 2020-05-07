@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,25 +15,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.ColumnDto;
-import com.spring.CustomObject.ListAllTaskByProjectDto;
-import com.spring.CustomObject.ProjectIdNameDto;
-import com.spring.CustomObject.TaskDto;
-import com.spring.CustomObject.TaskEditDto;
-import com.spring.CustomObject.TaskListDto;
-import com.spring.CustomObject.UserForWorkspaceDto;
-import com.spring.CustomObject.UserProjectWorkspaceFromTaskDto;
-import com.spring.CustomObject.WorkspaceSprintListDto;
-import com.spring.Model.Estimation;
-import com.spring.Model.Project;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Model.Workspace;
-import com.spring.Repository.TaskRepository;
-import com.spring.Security.UserAccountService;
+import com.spring.dto.ColumnDto;
+import com.spring.dto.ListAllTaskByProjectDto;
+import com.spring.dto.ProjectIdNameDto;
+import com.spring.dto.TaskDto;
+import com.spring.dto.TaskEditDto;
+import com.spring.dto.TaskListDto;
+import com.spring.dto.UserForWorkspaceDto;
+import com.spring.dto.UserProjectWorkspaceFromTaskDto;
+import com.spring.dto.WorkspaceSprintListDto;
+import com.spring.model.Estimation;
+import com.spring.model.Project;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.model.Workspace;
+import com.spring.repository.TaskRepository;
+import com.spring.security.UserAccountService;
 
 @Service
 @Transactional

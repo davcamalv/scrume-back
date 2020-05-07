@@ -1,11 +1,10 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,25 +20,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.ColumnDto;
-import com.spring.CustomObject.LastWorkspaceDto;
-import com.spring.CustomObject.SprintIdDto;
-import com.spring.CustomObject.SprintWithWorkspacesDto;
-import com.spring.CustomObject.TaskForWorkspaceDto;
-import com.spring.CustomObject.UserForWorkspaceDto;
-import com.spring.CustomObject.WorkspaceAndColumnTodoDto;
-import com.spring.CustomObject.WorkspaceEditDto;
-import com.spring.CustomObject.WorkspaceSprintListDto;
-import com.spring.CustomObject.WorkspaceWithColumnsDto;
-import com.spring.Model.Column;
-import com.spring.Model.HistoryTask;
-import com.spring.Model.Project;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Model.Workspace;
-import com.spring.Repository.WorkspaceRepository;
+import com.spring.dto.ColumnDto;
+import com.spring.dto.LastWorkspaceDto;
+import com.spring.dto.SprintIdDto;
+import com.spring.dto.SprintWithWorkspacesDto;
+import com.spring.dto.TaskForWorkspaceDto;
+import com.spring.dto.UserForWorkspaceDto;
+import com.spring.dto.WorkspaceAndColumnTodoDto;
+import com.spring.dto.WorkspaceEditDto;
+import com.spring.dto.WorkspaceSprintListDto;
+import com.spring.dto.WorkspaceWithColumnsDto;
+import com.spring.model.Column;
+import com.spring.model.HistoryTask;
+import com.spring.model.Project;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.model.Workspace;
+import com.spring.repository.WorkspaceRepository;
 
 @Service
 @Transactional

@@ -1,13 +1,13 @@
-package com.spring.JWT;
+package com.spring.jwt;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Repository.AbstractRepository;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.repository.AbstractRepository;
 
 @Repository
 public interface JwtUserAccountRepository extends AbstractRepository<UserAccount> {

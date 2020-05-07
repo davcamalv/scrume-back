@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.time.LocalDate;
 import java.util.stream.Stream;
@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.PaymentEditDto;
-import com.spring.Model.Payment;
-import com.spring.Security.UserAccountService;
-import com.spring.Service.PaymentService;
+import com.spring.dto.PaymentEditDto;
+import com.spring.model.Payment;
+import com.spring.security.UserAccountService;
+import com.spring.service.PaymentService;
 
 public class PaymentServiceTest extends AbstractTest {
 

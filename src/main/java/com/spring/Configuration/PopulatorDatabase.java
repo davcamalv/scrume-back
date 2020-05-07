@@ -1,5 +1,5 @@
 
-package com.spring.Configuration;
+package com.spring.configuration;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,45 +17,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.spring.Model.Box;
-import com.spring.Model.Column;
-import com.spring.Model.Document;
-import com.spring.Model.DocumentType;
-import com.spring.Model.Estimation;
-import com.spring.Model.HistoryTask;
-import com.spring.Model.Invitation;
-import com.spring.Model.Notification;
-import com.spring.Model.Payment;
-import com.spring.Model.Note;
-import com.spring.Model.Project;
-import com.spring.Model.SecurityBreach;
-import com.spring.Model.Sprint;
-import com.spring.Model.Task;
-import com.spring.Model.Team;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Model.UserRol;
-import com.spring.Model.Workspace;
-import com.spring.Repository.BoxRepository;
-import com.spring.Repository.ColumnRepository;
-import com.spring.Repository.DocumentRepository;
-import com.spring.Repository.EstimationRepository;
-import com.spring.Repository.HistoryTaskRepository;
-import com.spring.Repository.InvitationRepository;
-import com.spring.Repository.NotificationRepository;
-import com.spring.Repository.PaymentRepository;
-import com.spring.Repository.NoteRepository;
-import com.spring.Repository.ProjectRepository;
-import com.spring.Repository.SecurityBreachRepository;
-import com.spring.Repository.SprintRepository;
-import com.spring.Repository.TaskRepository;
-import com.spring.Repository.TeamRepository;
-import com.spring.Repository.UserRepository;
-import com.spring.Repository.UserRolRepository;
-import com.spring.Repository.WorkspaceRepository;
-import com.spring.Security.Role;
-import com.spring.Security.UserAccountRepository;
-import com.spring.Utiles.Utiles;
+import com.spring.model.Box;
+import com.spring.model.Column;
+import com.spring.model.DiscountCode;
+import com.spring.model.Document;
+import com.spring.model.DocumentType;
+import com.spring.model.Estimation;
+import com.spring.model.HistoryTask;
+import com.spring.model.Invitation;
+import com.spring.model.Note;
+import com.spring.model.Notification;
+import com.spring.model.Payment;
+import com.spring.model.Project;
+import com.spring.model.SecurityBreach;
+import com.spring.model.Sprint;
+import com.spring.model.Task;
+import com.spring.model.Team;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.model.UserRol;
+import com.spring.model.Workspace;
+import com.spring.repository.BoxRepository;
+import com.spring.repository.ColumnRepository;
+import com.spring.repository.DiscountCodeRepository;
+import com.spring.repository.DocumentRepository;
+import com.spring.repository.EstimationRepository;
+import com.spring.repository.HistoryTaskRepository;
+import com.spring.repository.InvitationRepository;
+import com.spring.repository.NoteRepository;
+import com.spring.repository.NotificationRepository;
+import com.spring.repository.PaymentRepository;
+import com.spring.repository.ProjectRepository;
+import com.spring.repository.SecurityBreachRepository;
+import com.spring.repository.SprintRepository;
+import com.spring.repository.TaskRepository;
+import com.spring.repository.TeamRepository;
+import com.spring.repository.UserRepository;
+import com.spring.repository.UserRolRepository;
+import com.spring.repository.WorkspaceRepository;
+import com.spring.security.Role;
+import com.spring.security.UserAccountRepository;
+import com.spring.utiles.Utiles;
 
 /**
  * 
@@ -69,6 +71,9 @@ public class PopulatorDatabase implements CommandLineRunner {
 
 	protected final Logger log = Logger.getLogger(PopulatorDatabase.class);
 
+	public static final String ABC1234516 = "ABC1234516";
+	public static final String DEFAULT = "Default";
+	
 	@Autowired
 	private UserAccountRepository accountRepository;
 
@@ -122,6 +127,10 @@ public class PopulatorDatabase implements CommandLineRunner {
 	
 	@Autowired
 	private SecurityBreachRepository securityBreachRepository;
+	
+	@Autowired
+	private DiscountCodeRepository discountCodeRepository;
+
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -149,7 +158,8 @@ public class PopulatorDatabase implements CommandLineRunner {
 		accountRepository.deleteAll();
 		documentRepository.deleteAll();
 		noteRepository.deleteAll();
-
+		discountCodeRepository.deleteAll();
+		
 		UserAccount account0 = accountRepository
 				.save(new UserAccount("administrator@gmail.com", Utiles.encryptedPassword("1234560"), LocalDateTime.now(),
 						LocalDateTime.now(), new HashSet<Role>(Arrays.asList(Role.ROLE_ADMIN))));
@@ -573,8 +583,8 @@ public class PopulatorDatabase implements CommandLineRunner {
 		entities.put("sprint6", sprint6.getId());
 		entities.put("sprint7", sprint7.getId());
 
-		Workspace workspaceFront = this.workspaceRepository.save(new Workspace("Default", sprint3Front));
-		Workspace workspaceBack = this.workspaceRepository.save(new Workspace("Default", sprint3Back));
+		Workspace workspaceFront = this.workspaceRepository.save(new Workspace(DEFAULT, sprint3Front));
+		Workspace workspaceBack = this.workspaceRepository.save(new Workspace(DEFAULT, sprint3Back));
 
 		entities.put("workspaceFront", workspaceFront.getId());
 		entities.put("workspaceBack", workspaceBack.getId());
@@ -584,10 +594,10 @@ public class PopulatorDatabase implements CommandLineRunner {
 		Workspace workspace3 = this.workspaceRepository
 				.save(new Workspace("Tareas de análisis de requisitos", sprint3));
 		Workspace workspace4 = this.workspaceRepository.save(new Workspace("Fase de cierre", sprint4));
-		Workspace workspace5 = this.workspaceRepository.save(new Workspace("Default", sprint5));
+		Workspace workspace5 = this.workspaceRepository.save(new Workspace(DEFAULT, sprint5));
 
-		Workspace workspace6 = this.workspaceRepository.save(new Workspace("Default", sprint6));
-		Workspace workspace7 = this.workspaceRepository.save(new Workspace("Default", sprint7));
+		Workspace workspace6 = this.workspaceRepository.save(new Workspace(DEFAULT, sprint6));
+		Workspace workspace7 = this.workspaceRepository.save(new Workspace(DEFAULT, sprint7));
 		Workspace workspace8 = this.workspaceRepository.save(new Workspace("Fase de desarrollo", sprint1));
 		
 		entities.put("workspace1", workspace1.getId());
@@ -1057,11 +1067,11 @@ public class PopulatorDatabase implements CommandLineRunner {
 		entities.put("historyTask21700", historyTask21700.getId());
 		entities.put("historyTask21800", historyTask21800.getId());
 		entities.put("historyTask21900", historyTask21900.getId());
-		entities.put("historyTask21500", historyTask22000.getId());
-		entities.put("historyTask21600", historyTask22100.getId());
-		entities.put("historyTask21700", historyTask22200.getId());
-		entities.put("historyTask21800", historyTask22300.getId());
-		entities.put("historyTask21900", historyTask22400.getId());
+		entities.put("historyTask22000", historyTask22000.getId());
+		entities.put("historyTask22100", historyTask22100.getId());
+		entities.put("historyTask22200", historyTask22200.getId());
+		entities.put("historyTask22300", historyTask22300.getId());
+		entities.put("historyTask22400", historyTask22400.getId());
 		
 		Estimation estimation1 = this.estimationRepository.save(new Estimation(5, user1, task1));
 		Estimation estimation2 = this.estimationRepository.save(new Estimation(15, user4, task1));
@@ -1085,20 +1095,21 @@ public class PopulatorDatabase implements CommandLineRunner {
 		
 		
 		
+		
 		Payment payment0 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user0.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user0.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment1 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user1.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234526", "ABC123456782A"));
+				user1.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment2 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user1.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234536", "ABC123456783A"));
+				user1.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment3 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user4.getUserAccount(), LocalDate.from(localDateTime1), "ABC1234546", "ABC123456784A"));
+				user4.getUserAccount(), LocalDate.from(localDateTime1), ABC1234516, ABC1234516));
 		Payment payment4 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime1), proBox,
-				user4.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234556", "ABC123456785A"));
+				user4.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment5 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user2.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234566", "ABC123456786A"));
+				user2.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment6 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user3.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234577", "ABC123456787A"));
+				user3.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 
 		entities.put("payment0", payment0.getId());
 		entities.put("payment1", payment1.getId());
@@ -1110,21 +1121,21 @@ public class PopulatorDatabase implements CommandLineRunner {
 		
 		
 		Payment payment100 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user100.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user100.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment200 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user200.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user200.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment300 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user300.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user300.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment400 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user400.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user400.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment500 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user500.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user500.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment600 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user600.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user600.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment700 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user700.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user700.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		Payment payment800 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user800.getUserAccount(), LocalDate.from(localDateTime00), "ABC1234516", "ABC123456781A"));
+				user800.getUserAccount(), LocalDate.from(localDateTime00), ABC1234516, ABC1234516));
 		
 		entities.put("payment100", payment100.getId());
 		entities.put("payment200", payment200.getId());
@@ -1132,16 +1143,14 @@ public class PopulatorDatabase implements CommandLineRunner {
 		entities.put("payment400", payment400.getId());
 		entities.put("payment500", payment500.getId());
 		entities.put("payment600", payment600.getId());
-		entities.put("payment500", payment500.getId());
-		entities.put("payment600", payment600.getId());
 		entities.put("payment700", payment700.getId());
 		entities.put("payment800", payment800.getId());
 		
 		//PAYMENTS CADUCADOS
 		Payment payment7 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user5.getUserAccount(), LocalDate.from(localDateTime0), "ABC1234561B", "ABC123456781C"));
+				user5.getUserAccount(), LocalDate.from(localDateTime0), "ABC1234561B", ABC1234516));
 		Payment payment8 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
-				user6.getUserAccount(), LocalDate.from(localDateTime0), "ABC1234562B", "ABC123456782C"));
+				user6.getUserAccount(), LocalDate.from(localDateTime0), "ABC1234562B", ABC1234516));
 		Payment payment9 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
 				user7.getUserAccount(), LocalDate.from(localDateTime0), "ABC1234563B", "ABC123456783C"));
 		Payment payment10 = this.paymentRepository.save(new Payment(LocalDate.from(localDateTime0), proBox,
@@ -1196,7 +1205,13 @@ public class PopulatorDatabase implements CommandLineRunner {
 
 		SecurityBreach securityBreach = this.securityBreachRepository.save(new SecurityBreach("Hemos encontrado una brecha de seguridad en el sistema, disculpe las molestias.", false));
 		entities.put("securityBreach", securityBreach.getId());
-
+		
+		LocalDateTime localDateTime18 = LocalDateTime.of(9999, 12, 30, 00, 00);
+		Date localDate18 = Date.from(localDateTime18.atZone(ZoneId.systemDefault()).toInstant());
+		
+		DiscountCode discountCode1 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid19"));
+		
+		entities.put("discountCode1", discountCode1.getId());
 		
 		Utiles.escribeFichero(entities, properties);
 
@@ -1223,6 +1238,7 @@ public class PopulatorDatabase implements CommandLineRunner {
 		documentRepository.flush();
 		noteRepository.flush();
 		notificationRepository.flush();
+		discountCodeRepository.flush();
 	}
 
 }

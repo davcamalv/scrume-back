@@ -1,4 +1,4 @@
-package com.spring.Scrume;
+package com.spring.scrume;
 
 import java.util.stream.Stream;
 
@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.HistoryTaskDto;
-import com.spring.Model.Task;
-import com.spring.Service.HistoryTaskService;
-import com.spring.Service.TaskService;
+import com.spring.dto.HistoryTaskDto;
+import com.spring.model.Task;
+import com.spring.service.HistoryTaskService;
+import com.spring.service.TaskService;
 
 public class HistoryTaskServiceTest extends AbstractTest {
 

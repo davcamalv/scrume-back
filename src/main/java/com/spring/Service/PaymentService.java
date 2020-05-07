@@ -1,4 +1,4 @@
-package com.spring.Service;
+package com.spring.service;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -12,15 +12,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.spring.CustomObject.PaymentEditDto;
-import com.spring.CustomObject.PaymentListDto;
-import com.spring.JWT.JwtResponse;
-import com.spring.JWT.JwtUserAccountService;
-import com.spring.Model.Payment;
-import com.spring.Model.User;
-import com.spring.Model.UserAccount;
-import com.spring.Repository.PaymentRepository;
-import com.spring.Security.UserAccountService;
+import com.spring.dto.PaymentEditDto;
+import com.spring.dto.PaymentListDto;
+import com.spring.jwt.JwtResponse;
+import com.spring.jwt.JwtUserAccountService;
+import com.spring.model.Payment;
+import com.spring.model.User;
+import com.spring.model.UserAccount;
+import com.spring.repository.PaymentRepository;
+import com.spring.security.UserAccountService;
 
 @Service
 @Transactional
