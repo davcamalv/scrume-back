@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.UserAccountDto;
 import com.spring.dto.UsernameDto;
-import com.spring.jwt.JwtRequest;
-import com.spring.jwt.JwtResponse;
-import com.spring.jwt.JwtUserAccountService;
-import com.spring.security.UserAccountService;
+import com.spring.jwtS.JwtRequest;
+import com.spring.jwtS.JwtResponse;
+import com.spring.jwtS.JwtUserAccountService;
+import com.spring.securityS.UserAccountService;
 
 @RestController
 @RequestMapping("/api/login")

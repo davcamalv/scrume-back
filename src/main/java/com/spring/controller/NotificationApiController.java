@@ -16,7 +16,7 @@ import com.spring.dto.NotificationDto;
 import com.spring.dto.NotificationListDto;
 import com.spring.dto.NotificationSaveDto;
 import com.spring.dto.NotificationUpdateDto;
-import com.spring.service.NotificationService;
+import com.spring.serviceS.NotificationService;
 
 @RestController
 @RequestMapping("/api/notification")

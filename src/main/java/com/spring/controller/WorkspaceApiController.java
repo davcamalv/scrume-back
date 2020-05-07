@@ -18,8 +18,8 @@ import com.spring.dto.SprintWithWorkspacesDto;
 import com.spring.dto.WorkspaceEditDto;
 import com.spring.dto.WorkspaceSprintListDto;
 import com.spring.dto.WorkspaceWithColumnsDto;
-import com.spring.model.Workspace;
-import com.spring.service.WorkspaceService;
+import com.spring.modelS.Workspace;
+import com.spring.serviceS.WorkspaceService;
 
 @RestController
 @RequestMapping("/api/workspace")

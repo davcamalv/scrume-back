@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.HistoryTaskDto;
-import com.spring.model.HistoryTask;
-import com.spring.service.HistoryTaskService;
+import com.spring.modelS.HistoryTask;
+import com.spring.serviceS.HistoryTaskService;
 
 @RestController
 @RequestMapping("/api/history-task")

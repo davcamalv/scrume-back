@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.DiscountCodeDto;
 import com.spring.dto.ValidCodeDto;
-import com.spring.model.DiscountCode;
-import com.spring.service.DiscountCodeService;
+import com.spring.modelS.DiscountCode;
+import com.spring.serviceS.DiscountCodeService;
 
 @RestController
 @RequestMapping("/api/discount-code")
