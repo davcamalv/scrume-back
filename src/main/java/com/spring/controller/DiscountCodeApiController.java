@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.DiscountCodeDto;
-import com.spring.dto.DiscountCodeWithIdDto;
 import com.spring.model.DiscountCode;
 import com.spring.service.DiscountCodeService;
 
@@ -49,7 +48,7 @@ public class DiscountCodeApiController extends AbstractApiController {
 	}
 	
 	@GetMapping("/isAValidCode/{code}")
-	public DiscountCodeWithIdDto update(@PathVariable String code) {
+	public Integer update(@PathVariable String code) {
 		super.logger.info("GET /api/discount-code/isAValidCode/" + code);
 		return this.discountCodeService.isAValidDiscountCode(code);
 	}
