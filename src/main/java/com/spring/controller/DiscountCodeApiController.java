@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.dto.DiscountCodeDto;
-import com.spring.dto.ValidCodeDto;
 import com.spring.model.DiscountCode;
 import com.spring.service.DiscountCodeService;
 
@@ -48,10 +47,10 @@ public class DiscountCodeApiController extends AbstractApiController {
 		this.discountCodeService.delete(idDiscountCode);
 	}
 	
-	@GetMapping("/isAValidCode")
-	public boolean update(@RequestBody ValidCodeDto validCodeDto) {
-		super.logger.info("GET /api/discount-code/isAValidCode" + validCodeDto);
-		return this.discountCodeService.isAValidDiscountCode(validCodeDto);
+	@GetMapping("/isAValidCode/{code}")
+	public boolean update(@PathVariable String code) {
+		super.logger.info("GET /api/discount-code/isAValidCode/" + code);
+		return this.discountCodeService.isAValidDiscountCode(code);
 	}
 	
 

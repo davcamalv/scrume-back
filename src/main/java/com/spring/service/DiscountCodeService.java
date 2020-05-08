@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.spring.dto.DiscountCodeDto;
-import com.spring.dto.ValidCodeDto;
 import com.spring.model.DiscountCode;
 import com.spring.model.User;
 import com.spring.repository.DiscountCodeRepository;
@@ -64,9 +63,9 @@ public class DiscountCodeService extends AbstractService {
 		this.discountCodeRepository.delete(discountCode);
 	}
 	
-	public boolean isAValidDiscountCode(ValidCodeDto validCodeDto) {
+	public boolean isAValidDiscountCode(String code) {
 		boolean res = false;
-		List<DiscountCode> discountCodes = this.discountCodeRepository.findByCode(validCodeDto.getCode());
+		List<DiscountCode> discountCodes = this.discountCodeRepository.findByCode(code);
 		if(!discountCodes.isEmpty()) {
 			res = true;
 			this.discountCodeRepository.delete(discountCodes.get(0));

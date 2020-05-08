@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.spring.dto.PaymentEditDto;
-import com.spring.model.Payment;
-import com.spring.security.UserAccountService;
 import com.spring.service.PaymentService;
 
 public class PaymentServiceTest extends AbstractTest {
