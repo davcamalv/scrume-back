@@ -1,0 +1,46 @@
+language: java
+dist: xenial
+jdk: openjdk8
+
+cache:
+    directories:
+    - "$HOME/.m2"
+ 
+before_cache:
+- rm -rf $HOME/.m2/repository/
+
+jobs:
+  include:
+    - stage: build
+      cache:
+        directories:
+        - $HOME/.m2
+      install:
+        - mvn clean install
+      script:
+        - mvn test
+      addons:
+        sonarcloud:
+          organization: "davcamalv"
+          token:
+            secure: dazqM3nU43CfUOKQhJO5eCzaBQw2s6DcMjDS76Dt5wQY06NSv1MzwGUJ3mJbSDjTgF5fwrtsilqPmdp/4qwbEXysU93RrqTaOeZbumRmJCUiCDF7RLvQ1XEOvJ7KsQ69ebl1XiX9IAKOGxQB+bDNVWBUDcR92pEq17X/DIveM/+f6PTe5sJBQClSnDBoZgpXT7gF6k/Ege14xYQUtFuEARySXntYOsX3bCKafI81x1DvGTwJBidZK0UcENY2TgKg4tO2vI6ylacgUW2pGh7yzt6NpnOJH17wHcufWidm4qrHpxx2EhzMwCOSoeDm3oNhzBMhDZuKgxdBgKQYOSQDT1w8+I1FkCOoXZUiOT2kJNx4VRIsbMJVxoBSwvK5KOe+1rA3e+fH6QPYKNNi3UQTQuax4dH8yeszkPyQNWSpsz4LlGUHxXOzNUsj1INi9f/TChKNgJOMupERG7bVsALWtcc75e/qcc+qa2na/wFb5PdDi1Fpgvab0drowmx1b74pn4euOfwrY4iWJThaqga+A/dGlrWZ6KLmZzumXoB/G80XTM10EhichJRhBuWtsEWejcycE615Cr6M9/wFNj9Yr4iKEDuKjo9H6+rxdUD57k18UIthBu1WHEiqqeODH8GYPKqZj9AQTqKScwSneAAZ9q5yJClh02xl39d95NChTjw=
+
+      script:
+        - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=davcamalv
+
+      deploy:
+          provider: heroku
+          app: api-scrume-sp4
+          strategy: git
+          script:
+            - cp application.properties_deployment src/main/resources/application.properties
+            - git add .
+            - git commit -m "Modificado el fichero properties"
+          api_key:
+            secure: XdeMqgQn4xNfZu94G/IXKyBPO7tWjHcAu/EQUW2uNele5Zj9Jg5QZr6bG9y/Rqq/WiyfSoN7Qhi5+E+56ku1fAKas94exeDqVtsU66E9lgGsK59qIBMctGvgsxr4O6y//oHqZxqeGOA0+YcfdK69ch7rwBG9MqUvX21iQCVpZ0z9tubhEaRuuhN+FE4epKu0ISu3mV5M2Whx9fpgeVMGXAbXgPLVn6PzQOCp4ZA1PqoaGQnZybDP3A7Odb9KAfRgc+5KhRyg2gqp4bbpiezoo/3hdgU2EdZmEsSSzFuSmHB5NdUWODoCyfPi10Npdk2ou2cJ11aJkAYPY/2wu4N5I3ebLdn2ClDQ5QrjnXZUfCbJGzex4nTEFie5aQPuo1tlnLVW6Ov9GUqagzLfDeJg4/bV5pRByJ1KX9rSPB+zdnhTehg4k4dsjeMs99vsUfMZalYe3eAtPvRJf4otGnRS0Yyrm75cU0ZOG1ljIKRz51x1eTozDAnPtL24vw2C93peYauImfV+1vPCqCAtxnz+tpPPfX7sJylmHUDODZJ84CqReaEjbH/NxAxgeBVI+r2GrSfWxVdBSmskCsl4sax63oj8EIQzGIZ/SSVdsT6+huC6vO9YvG0aKn999udBr8KGnaHrrt03dQ3rQsb86KPiH8Enwp93x2pYi7C7GUS7Wj4=
+          on: 
+            branch: develop
+
+notifications:
+  email:
+    - dcamalv@gmail.com
