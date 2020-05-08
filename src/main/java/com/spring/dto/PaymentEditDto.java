@@ -16,5 +16,6 @@ public class PaymentEditDto {
 	private LocalDate expiredDate;
 	private String orderId;
 	private String payerId;
+	private Integer codeId;
 
 }

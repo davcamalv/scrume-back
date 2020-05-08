@@ -50,7 +50,7 @@ public class PaymentServiceTest extends AbstractTest {
 		try {
 			super.authenticateOrUnauthenticate(user);
 			PaymentEditDto payment = new PaymentEditDto(0, super.entities().get("proBox"), date, "ABCD1234",
-					"ASFDFD59842");
+					"ASFDFD59842", null);
 			this.service.save(payment);
 			service.flush();
 			super.authenticateOrUnauthenticate(null);
