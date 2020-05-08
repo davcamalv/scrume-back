@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.spring.dto.DiscountCodeDto;
-import com.spring.dto.ValidCodeDto;
 import com.spring.service.DiscountCodeService;
 
 public class DiscountCodeServiceTest extends AbstractTest {
@@ -129,22 +128,22 @@ public class DiscountCodeServiceTest extends AbstractTest {
 	
 	@Test
 	public void DiscountCodeServiceIsAValidCodeTest() throws Exception {
-		ValidCodeDto validCodeDto1 = new ValidCodeDto("covid19");
-		ValidCodeDto validCodeDto2 = new ValidCodeDto("qwertyu");
+		String code1 = "covid19";
+		String code2 = "qwertyu";
 
 		Object[][] objects = {
 			
-			{"testuser1@gmail.com", validCodeDto1, null},
-			{"testuser1@gmail.com", validCodeDto2, null}};
+			{"testuser1@gmail.com", code1, null},
+			{"testuser1@gmail.com", code2, null}};
 
-			Stream.of(objects).forEach(x -> driverDiscountCodeServiceIsAValidCodeTest((String) x[0],(ValidCodeDto) x[1], (Class<?>) x[2]));
+			Stream.of(objects).forEach(x -> driverDiscountCodeServiceIsAValidCodeTest((String) x[0],(String) x[1], (Class<?>) x[2]));
 		}
 
-	protected void driverDiscountCodeServiceIsAValidCodeTest(String user, ValidCodeDto validCodeDto, Class<?> expected) {
+	protected void driverDiscountCodeServiceIsAValidCodeTest(String user, String code, Class<?> expected) {
 		Class<?> caught = null;
 		try {
 			super.authenticateOrUnauthenticate(user);
-			this.discountCodeService.isAValidDiscountCode(validCodeDto);
+			this.discountCodeService.isAValidDiscountCode(code);
 			this.discountCodeService.flush();
 			super.authenticateOrUnauthenticate(null);
 
