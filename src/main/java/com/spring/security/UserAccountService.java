@@ -38,7 +38,7 @@ public class UserAccountService implements UserDetailsService {
 	@Autowired
 	private UserService serviceUser;
 
-	protected final Logger logger = Logger.getLogger(UserAccountService.class);
+	protected final Logger logger = Logger.getLogger(UserAccountService.class); 
 
 	@Override
 	public UserDetails loadUserByUsername(String username) {
@@ -77,7 +77,7 @@ public class UserAccountService implements UserDetailsService {
 		UserAccountDto userAccountDtoBack = mapper.map(userAccountDB, UserAccountDto.class);
 
 		PaymentEditDto payment = new PaymentEditDto(0, userAccountDto.getBox(), userAccountDto.getExpiredDate(),
-				userAccountDto.getOrderId(), userAccountDto.getPayerId());
+				userAccountDto.getOrderId(), userAccountDto.getPayerId(), userAccountDto.getCodeId());
 
 		payment = this.servicePayment.save(userAccountDB, payment); 
 
@@ -89,7 +89,7 @@ public class UserAccountService implements UserDetailsService {
 		UserDto userDto = new UserDto(0, userAccountDtoBack.getUsername(), userAccountDtoBack.getUsername(),
 				userAccountDtoBack.getUsername(), "", "", userAccountDB.getId());
 
-		userDto = this.serviceUser.save(userDto);
+		this.serviceUser.save(userDto);
 
 		return userAccountDtoBack;
 	}
@@ -110,8 +110,7 @@ public class UserAccountService implements UserDetailsService {
 		}
 		userAccountDB.setCreatedAt(userAccountEntity.getCreatedAt());
 		this.repository.saveAndFlush(userAccountDB);
-		UserAccountDto userAccountDtoBack = mapper.map(userAccountDB, UserAccountDto.class);
-		return userAccountDtoBack;
+		return mapper.map(userAccountDB, UserAccountDto.class);
 	}
 
 	public static UserAccount getPrincipal() {

@@ -31,6 +31,9 @@ public class PaymentService extends AbstractService {
 	private UserService serviceUser;
 
 	@Autowired
+	private DiscountCodeService discountCodeService;
+	
+	@Autowired
 	private BoxService serviceBox;
 
 	@Autowired
@@ -63,11 +66,13 @@ public class PaymentService extends AbstractService {
 				saveTo = repository.saveAndFlush(saveTo);
 				payment.setId(saveTo.getId());
 			} else {
-				this.calculateRenovation(payment, pagoAnterior, account);
+				this.calculateRenovation(payment, pagoAnterior, account); 
 			}
 
 		}
-
+		if(payment.getCodeId() != null) {
+			this.discountCodeService.deleteVoid(payment.getCodeId());
+		}
 		return serviceJwt.generateToken(account);
 	}
 
@@ -88,7 +93,9 @@ public class PaymentService extends AbstractService {
 			}
 
 		}
-
+		if(payment.getCodeId() != null) {
+			this.discountCodeService.deleteVoid(payment.getCodeId());
+		}
 		return payment;
 	}
 
