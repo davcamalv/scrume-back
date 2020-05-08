@@ -19,7 +19,7 @@ import com.spring.model.UserAccount;
 import com.spring.security.Role;
 import com.spring.security.UserAccountRepository;
 import com.spring.service.UserService;
-import com.spring.utiles.Utiles;
+import com.spring.tools.Utiles;
 
 public class UserServiceTest extends AbstractTest {
 

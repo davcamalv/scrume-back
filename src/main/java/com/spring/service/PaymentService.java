@@ -1,6 +1,7 @@
 package com.spring.service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -47,7 +48,7 @@ public class PaymentService extends AbstractService {
 	}
 
 	public JwtResponse save(PaymentEditDto payment) {
-
+		this.validateDate(payment.getExpiredDate());				
 		Payment saveTo = null;
 
 		UserAccount account = UserAccountService.getPrincipal();
@@ -57,18 +58,12 @@ public class PaymentService extends AbstractService {
 			Payment pagoAnterior = findByUserAccount(account);
 
 			if (LocalDate.now().isAfter(pagoAnterior.getExpiredDate())) {
-				if (payment.getExpiredDate().isAfter(LocalDate.now())) {
-					saveTo = new Payment(LocalDate.now(), this.serviceBox.getOne(payment.getBox()), account,
-							payment.getExpiredDate(), payment.getOrderId(), payment.getPayerId());
-					saveTo = repository.saveAndFlush(saveTo);
-					payment.setId(saveTo.getId());
-				} else {
-					throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED,
-							"Expired date is not later than currently");
-				}
+				saveTo = new Payment(LocalDate.now(), this.serviceBox.getOne(payment.getBox()), account,
+				payment.getExpiredDate(), payment.getOrderId(), payment.getPayerId());
+				saveTo = repository.saveAndFlush(saveTo);
+				payment.setId(saveTo.getId());
 			} else {
-				throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED,
-						"The registered payment until now is accepted. New payments are not still allowed.");
+				this.calculateRenovation(payment, pagoAnterior, account);
 			}
 
 		}
@@ -76,6 +71,7 @@ public class PaymentService extends AbstractService {
 		return serviceJwt.generateToken(account);
 	}
 
+	
 	public PaymentEditDto save(UserAccount user, PaymentEditDto payment) {
 
 		Payment saveTo = null;
@@ -111,4 +107,29 @@ public class PaymentService extends AbstractService {
 		return res;
 	}
 
+	private void validateDate(LocalDate date) {
+		if (!date.isAfter(LocalDate.now())) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Expired date is not later than currently");
+		}
+	}
+	
+	private Payment calculateRenovation(PaymentEditDto paymentEditDto, Payment oldPayment, UserAccount account) {
+		long dayDifference = ChronoUnit.DAYS.between(LocalDate.now(), oldPayment.getExpiredDate());
+		Payment payment;
+		String newBox = this.serviceBox.findOne(paymentEditDto.getBox()).getName();
+		String oldBox = oldPayment.getBox().getName();
+		if(newBox.equals(oldBox)) {
+			paymentEditDto.setExpiredDate(paymentEditDto.getExpiredDate().plusDays(dayDifference));
+		}else if(oldBox.equals("STANDARD") && newBox.equals("PRO")) {
+			dayDifference = dayDifference/2;
+			paymentEditDto.setExpiredDate(paymentEditDto.getExpiredDate().plusDays(dayDifference));
+		}else if(oldBox.equals("PRO") && newBox.equals("STANDARD")) {
+			dayDifference = dayDifference*2;
+			paymentEditDto.setExpiredDate(paymentEditDto.getExpiredDate().plusDays(dayDifference));
+		}
+		
+		payment = repository.saveAndFlush(new Payment(LocalDate.now(), this.serviceBox.getOne(paymentEditDto.getBox()), account,
+				paymentEditDto.getExpiredDate(), paymentEditDto.getOrderId(), paymentEditDto.getPayerId()));
+		return payment;
+	}
 }

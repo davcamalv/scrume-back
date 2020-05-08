@@ -40,9 +40,8 @@ public class PaymentServiceTest extends AbstractTest {
 	@Test
 	public void testPago() {
 		Object[][] objects = { 
-				{ "testuser1@gmail.com", LocalDate.of(9999, 04, 24), null },
-				{ null, LocalDate.of(2020, 04, 24), AssertionError.class },
-				{ "testuser1@gmail.com", LocalDate.of(2020, 01, 24), ResponseStatusException.class } 
+				{ "testuser1@gmail.com", LocalDate.of(2020, 01, 24), ResponseStatusException.class }, 
+				{ "testuser1@gmail.com", LocalDate.of(9999, 04, 24), null }
 				};
 		Stream.of(objects).forEach(x -> driverPago((String) x[0], (LocalDate) x[1], (Class<?>) x[2]));
 	}
@@ -52,9 +51,6 @@ public class PaymentServiceTest extends AbstractTest {
 
 		try {
 			super.authenticateOrUnauthenticate(user);
-
-			Payment paymentUser = this.service.findByUserAccount(UserAccountService.getPrincipal());
-			paymentUser.setExpiredDate(LocalDate.of(2020, 03, 12));
 			PaymentEditDto payment = new PaymentEditDto(0, super.entities().get("proBox"), date, "ABCD1234",
 					"ASFDFD59842");
 			this.service.save(payment);
