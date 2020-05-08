@@ -134,7 +134,7 @@ public class DiscountCodeServiceTest extends AbstractTest {
 		Object[][] objects = {
 			
 			{"testuser1@gmail.com", code1, null},
-			{"testuser1@gmail.com", code2, null}};
+			{"testuser1@gmail.com", code2, ResponseStatusException.class}};
 
 			Stream.of(objects).forEach(x -> driverDiscountCodeServiceIsAValidCodeTest((String) x[0],(String) x[1], (Class<?>) x[2]));
 		}
