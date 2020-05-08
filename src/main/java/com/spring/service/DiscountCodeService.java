@@ -70,14 +70,18 @@ public class DiscountCodeService extends AbstractService {
 	}
 	
 	public DiscountCodeWithIdDto isAValidDiscountCode(String code) {
-		DiscountCodeWithIdDto res = null;
 		List<DiscountCode> discountCodes = this.discountCodeRepository.findByCode(code);
-		if(!discountCodes.isEmpty()) {
-			res = new DiscountCodeWithIdDto(discountCodes.get(0).getId(), discountCodes.get(0).getCode());
-		}
-		return res;
+		this.validateCodes(discountCodes);
+		return new DiscountCodeWithIdDto(discountCodes.get(0).getId(), discountCodes.get(0).getCode());
 	}
 	
+	private void validateCodes(List<DiscountCode> discountCodes) {
+		if(discountCodes.isEmpty())	{
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
+					"Invalid code");
+		}	
+	}
+
 	private void validateIsLogged(User principal) {
 		if(principal == null) {
 			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, 
