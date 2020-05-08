@@ -59,7 +59,7 @@ public class JwtWebSecurityConfig extends WebSecurityConfigurerAdapter {
 		web.ignoring().antMatchers("/api/user/find-by-authorization");
 		web.ignoring().antMatchers("/api/user/security-breach");
 		web.ignoring().antMatchers("/api/login/authenticate");
-		web.ignoring().antMatchers("/api/discount-code/isAValidCode");
+		web.ignoring().antMatchers("/api/discount-code/isAValidCode/**");
 
 		
 	}
