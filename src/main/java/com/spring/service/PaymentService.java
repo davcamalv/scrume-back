@@ -127,7 +127,8 @@ public class PaymentService extends AbstractService {
 			dayDifference = dayDifference*2;
 			paymentEditDto.setExpiredDate(paymentEditDto.getExpiredDate().plusDays(dayDifference));
 		}
-		
+		oldPayment.setExpiredDate(LocalDate.now());
+		repository.saveAndFlush(oldPayment);
 		payment = repository.saveAndFlush(new Payment(LocalDate.now(), this.serviceBox.getOne(paymentEditDto.getBox()), account,
 				paymentEditDto.getExpiredDate(), paymentEditDto.getOrderId(), paymentEditDto.getPayerId()));
 		return payment;
