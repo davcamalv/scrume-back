@@ -1209,10 +1209,27 @@ public class PopulatorDatabase implements CommandLineRunner {
 		LocalDateTime localDateTime18 = LocalDateTime.of(9999, 12, 30, 00, 00);
 		Date localDate18 = Date.from(localDateTime18.atZone(ZoneId.systemDefault()).toInstant());
 		
-		DiscountCode discountCode1 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid19"));
-		
+		DiscountCode discountCode1 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid10"));
+		DiscountCode discountCode2 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid11"));
+		DiscountCode discountCode3 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid12"));
+		DiscountCode discountCode4 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid13"));
+		DiscountCode discountCode5 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid14"));
+		DiscountCode discountCode6 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid15"));
+		DiscountCode discountCode7 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid16"));
+		DiscountCode discountCode8 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid17"));
+		DiscountCode discountCode9 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid18"));
+		DiscountCode discountCode10 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid19"));
 		entities.put("discountCode1", discountCode1.getId());
-		
+		entities.put("discountCode2", discountCode2.getId());
+		entities.put("discountCode3", discountCode3.getId());
+		entities.put("discountCode4", discountCode4.getId());
+		entities.put("discountCode5", discountCode5.getId());
+		entities.put("discountCode6", discountCode6.getId());
+		entities.put("discountCode7", discountCode7.getId());
+		entities.put("discountCode8", discountCode8.getId());
+		entities.put("discountCode9", discountCode9.getId());
+		entities.put("discountCode10", discountCode10.getId());
+
 		Utiles.escribeFichero(entities, properties);
 
 		log.info("The entities mapped are: \n" + entities.keySet().stream().map(x -> {
