@@ -468,7 +468,7 @@ public class PopulatorDatabase implements CommandLineRunner {
 		
 		LocalDateTime localDateTime0 = LocalDateTime.of(0, 2, 03, 10, 15);
 		Date localDate0 = Date.from(localDateTime0.atZone(ZoneId.systemDefault()).toInstant());
-		LocalDateTime localDateTime00 = LocalDateTime.of(9999, 2, 03, 10, 15);
+		LocalDateTime localDateTime00 = LocalDateTime.of(9900, 2, 03, 10, 15);
 		Date localDate00 = Date.from(localDateTime00.atZone(ZoneId.systemDefault()).toInstant());
 
 		LocalDateTime localDateTime1 = LocalDateTime.of(2020, 2, 03, 10, 15);
@@ -1206,7 +1206,7 @@ public class PopulatorDatabase implements CommandLineRunner {
 		SecurityBreach securityBreach = this.securityBreachRepository.save(new SecurityBreach("Hemos encontrado una brecha de seguridad en el sistema, disculpe las molestias.", false));
 		entities.put("securityBreach", securityBreach.getId());
 		
-		LocalDateTime localDateTime18 = LocalDateTime.of(9999, 12, 30, 00, 00);
+		LocalDateTime localDateTime18 = LocalDateTime.of(9900, 12, 30, 00, 00);
 		Date localDate18 = Date.from(localDateTime18.atZone(ZoneId.systemDefault()).toInstant());
 		
 		DiscountCode discountCode1 = this.discountCodeRepository.save(new DiscountCode(localDate18, "covid10"));
