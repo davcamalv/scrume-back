@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.spring.dto.DiscountCodeDto;
-import com.spring.dto.ValidCodeDto;
 import com.spring.model.DiscountCode;
 import com.spring.model.User;
 import com.spring.repository.DiscountCodeRepository;
@@ -64,16 +63,24 @@ public class DiscountCodeService extends AbstractService {
 		this.discountCodeRepository.delete(discountCode);
 	}
 	
-	public boolean isAValidDiscountCode(ValidCodeDto validCodeDto) {
-		boolean res = false;
-		List<DiscountCode> discountCodes = this.discountCodeRepository.findByCode(validCodeDto.getCode());
-		if(!discountCodes.isEmpty()) {
-			res = true;
-			this.discountCodeRepository.delete(discountCodes.get(0));
-		}
-		return res;
+	public void deleteVoid(Integer codeId) {
+		DiscountCode discountCode = this.findOne(codeId);
+		this.discountCodeRepository.delete(discountCode);
 	}
 	
+	public Integer isAValidDiscountCode(String code) {
+		List<DiscountCode> discountCodes = this.discountCodeRepository.findByCode(code);
+		this.validateCodes(discountCodes);
+		return discountCodes.get(0).getId();
+	}
+	
+	private void validateCodes(List<DiscountCode> discountCodes) {
+		if(discountCodes.isEmpty())	{
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
+					"Invalid code");
+		}	
+	}
+
 	private void validateIsLogged(User principal) {
 		if(principal == null) {
 			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, 
@@ -97,6 +104,8 @@ public class DiscountCodeService extends AbstractService {
 	public void flush() {
 		this.discountCodeRepository.flush();
 	}
+
+	
 
 	
 

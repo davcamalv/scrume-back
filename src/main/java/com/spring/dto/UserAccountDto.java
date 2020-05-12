@@ -20,5 +20,7 @@ public class UserAccountDto {
 	private String payerId;
 
 	private LocalDate expiredDate;
+	
+	private Integer codeId;
 
 }
